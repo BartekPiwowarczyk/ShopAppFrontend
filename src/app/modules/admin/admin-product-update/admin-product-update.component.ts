@@ -14,6 +14,9 @@ import { AdminMessageService } from '../admin-message.service';
 export class AdminProductUpdateComponent implements OnInit {
   product!: AdminProductUpdate;
   productForm!: FormGroup;
+  requiredFileTypes = 'image/jpeg, image/png';
+  imageForm!: FormGroup;
+  image: string | null=null;
 
   constructor(
     private router: ActivatedRoute,
@@ -21,7 +24,7 @@ export class AdminProductUpdateComponent implements OnInit {
     private formBuilder: FormBuilder,
     private snackBar: MatSnackBar,
     private adminMessageService: AdminMessageService
-    ) {}
+  ) {}
 
   ngOnInit(): void {
     this.getProduct();
@@ -32,39 +35,62 @@ export class AdminProductUpdateComponent implements OnInit {
       price: ['', [Validators.required, Validators.min(0)]],
       currency: ['PLN', Validators.required],
     });
+
+    this.imageForm = this.formBuilder.group({
+      file: [''],
+    });
   }
 
   getProduct() {
     let id = Number(this.router.snapshot.params['id']);
     this.adminProductUpdateService
       .getProduct(id)
-      .subscribe(product => this.mapFormValues(product));
+      .subscribe((product) => this.mapFormValues(product));
   }
 
-  submit(){
+  submit() {
     let id = Number(this.router.snapshot.params['id']);
-    this.adminProductUpdateService.saveProduct(id, {
-      name: this.productForm.get('name')?.value,
-      description: this.productForm.get('description')?.value,
-      category: this.productForm.get('category')?.value,
-      price: this.productForm.get('price')?.value,
-      currency: this.productForm.get('currency')?.value,
-    }as AdminProductUpdate).subscribe({
-      next: product => {
-      this.mapFormValues(product);
-      this.snackBar.open("Produkt został dodany",'',{duration: 3000});
-      },
-        error: (err) => this.adminMessageService.addSpringErrors(err.error)
-    });
+    this.adminProductUpdateService
+      .saveProduct(id, {
+        name: this.productForm.get('name')?.value,
+        description: this.productForm.get('description')?.value,
+        category: this.productForm.get('category')?.value,
+        price: this.productForm.get('price')?.value,
+        currency: this.productForm.get('currency')?.value,
+        image: this.image
+      } as AdminProductUpdate)
+      .subscribe({
+        next: (product) => {
+          this.mapFormValues(product);
+          this.snackBar.open('Produkt został dodany', '', { duration: 3000 });
+        },
+        error: (err) => this.adminMessageService.addSpringErrors(err.error),
+      });
+  }
+
+  uploadFile() {
+    let formData = new FormData();
+    formData.append('file',this.imageForm.get('file')?.value);
+    this.adminProductUpdateService.uploadImage(formData)
+    .subscribe(uploadResponse => this.image = uploadResponse.filename);
+  }
+
+  onFileChange(event: any) {
+    if (event.target.files.length > 0) {
+      this.imageForm.patchValue({
+        file: event.target.files[0],
+      });
+    }
   }
 
   private mapFormValues(product: AdminProductUpdate): void {
-    return this.productForm.setValue({
+    this.productForm.setValue({
       name: product.name,
       description: product.description,
       category: product.category,
       price: product.price,
-      currency: product.currency
+      currency: product.currency,
     });
+    this.image = product.image;
   }
 }
