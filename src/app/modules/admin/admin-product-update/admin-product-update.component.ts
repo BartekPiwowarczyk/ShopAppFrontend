@@ -55,7 +55,7 @@ export class AdminProductUpdateComponent implements OnInit {
       .saveProduct(id, {
         name: this.productForm.get('name')?.value,
         description: this.productForm.get('description')?.value,
-        fullDescription:this.productForm.get('fullDecription')?.value,
+        fullDescription:this.productForm.get('fullDescription')?.value,
         category: this.productForm.get('category')?.value,
         price: this.productForm.get('price')?.value,
         currency: this.productForm.get('currency')?.value,

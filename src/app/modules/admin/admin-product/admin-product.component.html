@@ -11,6 +11,15 @@
     <td mat-cell *matCellDef="let element">{{ element.productId }}</td>
   </ng-container>
 
+  <ng-container matColumnDef="image">
+    <th mat-header-cell *matHeaderCellDef>Obraz</th>
+    <td mat-cell *matCellDef="let element">     
+       <a routerLink="{{'/admin/products/update/'+element.productId}}">
+          <img *ngIf=!element?.image src="/assets/image-placeholder.png" width="50"  mat-card-lg-image class="productImage">
+          <img *ngIf=element?.image src="{{'/api/data/productImage/' + element?.image}}" width="50"  mat-card-lg-image class="productImage">
+       </a></td>
+  </ng-container>
+
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef>Nazwa</th>
     <td mat-cell *matCellDef="let element">{{ element.name }}</td>
