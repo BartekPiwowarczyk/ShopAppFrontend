@@ -4,3 +4,8 @@
   background: $lightgray;
   padding: 20px;
 }
+
+mat-selection-list {
+  @Input()
+disabled: boolean
+}

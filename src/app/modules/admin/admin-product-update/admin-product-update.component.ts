@@ -37,7 +37,6 @@ export class AdminProductUpdateComponent implements OnInit {
       currency: ['PLN', Validators.required],
       slug: ['',  [Validators.required, Validators.minLength(4)]],
     });
-
     this.imageForm = this.formBuilder.group({
       file: [''],
     });
