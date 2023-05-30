@@ -5,7 +5,15 @@
   padding: 20px;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  color: #777;
+}
+
 mat-selection-list {
-  @Input()
+@Input()
 disabled: boolean
 }
