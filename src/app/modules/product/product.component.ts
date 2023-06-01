@@ -1,36 +1,34 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from './product.service';
-import { Product } from './model/product';
-import { Page } from 'src/app/shared/model/page';
+import { Product } from '../common/model/product';
+import { Page } from 'src/app/modules/common/model/page';
 import { PageEvent } from '@angular/material/paginator';
-
 
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
-  styleUrls: ['./product.component.scss']
+  styleUrls: ['./product.component.scss'],
 })
 export class ProductComponent implements OnInit {
-
   page!: Page<Product>;
 
-constructor(private productService : ProductService) {}
+  constructor(private productService: ProductService) {}
 
-ngOnInit():void {
-  this.getProducts();
-}
+  ngOnInit(): void {
+    this.getProducts();
+  }
 
-getProducts() {
-  this.getProductPage(0,10);
-}
+  getProducts() {
+    this.getProductPage(0, 10);
+  }
 
-onPageEvent(event: PageEvent) {
-  this.getProductPage(event.pageIndex,event.pageSize);
-}
+  onPageEvent(event: PageEvent) {
+    this.getProductPage(event.pageIndex, event.pageSize);
+  }
 
-private getProductPage(page: number, size: number) {
-  this.productService.getProducts(page, size)
-    .subscribe(page => this.page = page);
-}
-
+  private getProductPage(page: number, size: number) {
+    this.productService
+      .getProducts(page, size)
+      .subscribe((page) => (this.page = page));
+  }
 }
