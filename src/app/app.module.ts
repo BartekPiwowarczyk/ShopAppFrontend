@@ -8,7 +8,7 @@ import { FullpageModule } from './layouts/fullpage/fullpage.module';
 import { FullpageadminModule } from './layouts/fullpageadmin/fullpageadmin.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { CategoryComponent } from './modules/category/category.component';
+import { AdminReviewComponent } from './modules/admin/admin-review/admin-review.component';
 
 @NgModule({
   declarations: [
