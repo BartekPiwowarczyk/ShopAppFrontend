@@ -28,8 +28,7 @@ import { FormGroup } from '@angular/forms';
       <input matInput placeholder="Podaj url" formControlName="slug" />
       <div
         *ngIf="slug?.invalid && (slug?.dirty || slug?.touched)"
-        class="errorMessages"
-      >
+        class="errorMessages">
         <div *ngIf="slug?.errors?.['required']">Nawa jest wymagana</div>
         <div *ngIf="slug?.errors?.['minlength']">
           Nawa musi mieć przynajmniej 4 znaki

@@ -1,5 +1,5 @@
 export interface AdminReview {
-  reviewId: number;
+  id: number;
   productId: number;
   authorName: string;
   content: string;

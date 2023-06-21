@@ -17,7 +17,7 @@ export class AdminProductComponent implements AfterViewInit {
   @ViewChild(MatTable) table!: MatTable<any>;
   displayedColumns: string[] = [
     'image',
-    'productId',
+    'id',
     'name',
     'price',
     'actions',
@@ -53,7 +53,7 @@ export class AdminProductComponent implements AfterViewInit {
       .afterClosed()
       .subscribe((result) => {
         if (result) {
-          this.adminProductService.delete(element.productId).subscribe(() => {
+          this.adminProductService.delete(element.id).subscribe(() => {
             this.data.forEach((value, index) => {
               if (element == value) {
                 this.data.splice(index, 1);

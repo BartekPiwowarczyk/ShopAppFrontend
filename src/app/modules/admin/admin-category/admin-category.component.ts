@@ -10,7 +10,7 @@ import { MatTable } from '@angular/material/table';
   styleUrls: ['./admin-category.component.scss'],
 })
 export class AdminCategoryComponent implements OnInit {
-  displayedColumns: string[] = ['categoryId', 'name', 'actions'];
+  displayedColumns: string[] = ['id', 'name', 'actions'];
   data: Array<AdminCategoryNameDto> = [];
 
   @ViewChild(MatTable) table!: MatTable<any>;
@@ -36,7 +36,7 @@ export class AdminCategoryComponent implements OnInit {
       .afterClosed()
       .subscribe((result) => {
         if (result) {
-          this.adminCategoryService.delete(element.categoryId).subscribe(() => {
+          this.adminCategoryService.delete(element.id).subscribe(() => {
             this.data.forEach((value, index) => {
               if (element == value) {
                 this.data.splice(index, 1);

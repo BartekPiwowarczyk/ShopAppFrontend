@@ -29,7 +29,7 @@ export class AdminReviewComponent implements OnInit {
       .afterClosed()
       .subscribe((result) => {
         if (result) {
-          this.adminReviewService.moderate(element.reviewId).subscribe(() => {
+          this.adminReviewService.moderate(element.id).subscribe(() => {
             this.data.forEach((value, index) => {
               if (element === value) {
                 element.moderated = true;
@@ -46,7 +46,7 @@ export class AdminReviewComponent implements OnInit {
       .afterClosed()
       .subscribe((result) => {
         if (result) {
-          this.adminReviewService.delete(element.reviewId).subscribe(() => {
+          this.adminReviewService.delete(element.id).subscribe(() => {
             this.data.forEach((value, index) => {
               if (element === value) {
                 this.data.splice(index, 1);

@@ -1,5 +1,5 @@
 export interface AdminProduct {
-  productId: number,
+  id: number,
   image: string,
   name: string,
   price: number,

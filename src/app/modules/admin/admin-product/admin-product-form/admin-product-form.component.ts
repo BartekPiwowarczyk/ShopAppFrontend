@@ -74,7 +74,7 @@ import { FormCategoryService } from './form-category.service';
       <mat-select formControlName="categoryId">
         <mat-option
           *ngFor="let element of categories"
-          [value]="element.categoryId"
+          [value]="element.id"
         >
           {{ element.name }}
         </mat-option>

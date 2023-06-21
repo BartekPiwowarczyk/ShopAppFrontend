@@ -16,8 +16,6 @@ export class AdminProductUpdateService {
 
   saveProduct(id: number, value: AdminProductUpdate) {
     return this.http.put<AdminProductUpdate>(
-      '/api/admin/products/' + id,
-      value
-    );
+      '/api/admin/products/' + id, value);
   }
 }

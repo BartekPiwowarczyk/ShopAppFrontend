@@ -57,7 +57,7 @@ export class AdminProductAddComponent implements OnInit {
       .subscribe({
         next: (product) => {
           this.router
-            .navigate(['/admin/products/update', product.productId])
+            .navigate(['/admin/products/update', product.id])
             .then(() =>
               this.snackBar.open('Produkt został dodany', '', {
                 duration: 3000,
