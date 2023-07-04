@@ -40,6 +40,7 @@ export class OrderComponent implements OnInit{
       email: ['', [Validators.required, Validators.email]],
       phone: ['', Validators.required],
       shipment: ['', Validators.required],
+      payment: ['', Validators.required]
     })
     this.getInitData();
   }
@@ -62,7 +63,8 @@ export class OrderComponent implements OnInit{
         email: this.formGroup.get('email')?.value,
         phone: this.formGroup.get('phone')?.value,
         cartId: Number(this.cookieService.get("cartId")),
-        shipmentId: Number(this.formGroup.get('shipment')?.value.id)
+        shipmentId: Number(this.formGroup.get('shipment')?.value.id),
+        paymentId: Number(this.formGroup.get('payment')?.value.id)
       } as OrderDto)
       .subscribe(orderSummary => {
         this.orderSummary = orderSummary;
@@ -74,9 +76,14 @@ export class OrderComponent implements OnInit{
   getInitData() {
     this.orderService.getInitData()
     .subscribe(initData => {
-       this.initData = initData
+       this.initData = initData;
        this.setDefaultShipment();
+       this.setDefaultPayment();
     })
+  }
+  setDefaultPayment() {
+    this.formGroup.patchValue({"payment": this.initData.payments
+    .filter(payment => payment.defaultPayment === true)[0]});
   }
   setDefaultShipment() {
     this.formGroup.patchValue({"shipment": this.initData.shipments
