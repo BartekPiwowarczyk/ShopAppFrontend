@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { Chart, ChartData, registerables } from 'chart.js';
-import { AdminOrderService } from '../modules/admin/admin-order/admin-order.service';
+import { AdminOrderService } from '../admin-order.service';
 
 @Component({
   selector: 'app-admin-order-stats',
@@ -88,8 +88,8 @@ export class AdminOrderStatsComponent implements AfterViewInit{
         this.data.datasets[0].data = stats.order;
         this.data.datasets[1].data = stats.sale;
         this.chart.update();
-        this.ordersCount = stats.order.reduce((acc: number, value: number) => acc + value);
-        this.salesSum = stats.sale.reduce((acc: number, value: number) => acc + value);
+        this.ordersCount = stats.ordersCount;
+        this.salesSum = stats.salesSum;
       });
   }
 

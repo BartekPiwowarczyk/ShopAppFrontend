@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AdminOrderService } from '../modules/admin/admin-order/admin-order.service';
+import { AdminOrderService } from '../admin-order.service';
 
 @Component({
   selector: 'app-admin-order-export',

@@ -17,8 +17,8 @@ import { AdminCategoryUpdateComponent } from 'src/app/modules/admin/admin-catego
 import { AdminCategoryAddComponent } from 'src/app/modules/admin/admin-category/admin-category-add/admin-category-add.component';
 import { AdminCategoryFormComponent } from 'src/app/modules/admin/admin-category/admin-category-form/admin-category-form.component';
 import { AdminReviewComponent } from 'src/app/modules/admin/admin-review/admin-review.component';
-import { AdminOrderComponent } from 'src/app/modules/admin/admin-order/modules/admin/admin-order/admin-order.component';
-import { AdminOrderUpdateComponent } from 'src/app/modules/admin/admin-order/modules/admin/admin-order/admin-order-update/admin-order-update.component';
+import { AdminOrderComponent } from 'src/app/modules/admin/admin-order/admin-order.component';
+import { AdminOrderUpdateComponent } from 'src/app/modules/admin/admin-order/admin-order-update/admin-order-update.component';
 import { AdminOrderExportComponent } from 'src/app/modules/admin/admin-order/admin-order-export/admin-order-export.component';
 import { AdminOrderStatsComponent } from 'src/app/modules/admin/admin-order/admin-order-stats/admin-order-stats.component';
 

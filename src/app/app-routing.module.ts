@@ -18,8 +18,8 @@ import { CategoryComponent } from './modules/category/category.component';
 import { AdminReviewComponent } from './modules/admin/admin-review/admin-review.component';
 import { CartComponent } from './modules/cart/cart.component';
 import { OrderComponent } from './modules/order/order.component';
-import { AdminOrderComponent } from './modules/admin/admin-order/modules/admin/admin-order/admin-order.component';
-import { AdminOrderUpdateComponent } from './modules/admin/admin-order/modules/admin/admin-order/admin-order-update/admin-order-update.component';
+import { AdminOrderComponent } from './modules/admin/admin-order/admin-order.component';
+import { AdminOrderUpdateComponent } from './modules/admin/admin-order/admin-order-update/admin-order-update.component';
 import { AdminOrderExportComponent } from './modules/admin/admin-order/admin-order-export/admin-order-export.component';
 import { AdminOrderStatsComponent } from './modules/admin/admin-order/admin-order-stats/admin-order-stats.component';
 
