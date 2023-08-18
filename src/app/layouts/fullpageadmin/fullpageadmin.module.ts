@@ -22,6 +22,8 @@ import { AdminOrderUpdateComponent } from 'src/app/modules/admin/admin-order/adm
 import { AdminOrderExportComponent } from 'src/app/modules/admin/admin-order/admin-order-export/admin-order-export.component';
 import { AdminOrderStatsComponent } from 'src/app/modules/admin/admin-order/admin-order-stats/admin-order-stats.component';
 
+
+
 @NgModule({
   declarations: [
     FullpageadminComponent,
