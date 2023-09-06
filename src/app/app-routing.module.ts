@@ -26,6 +26,8 @@ import { AdminLoginComponent } from './modules/admin/admin-login/admin-login.com
 import { FullpageadminemptyComponent } from './layouts/fullpageadminempty/fullpageadminemptyComponent';
 import { AdminAuthorizeGuard } from './modules/admin/common/guard/adminAuthorizeGuard';
 import { ProfileComponent } from './modules/profile/profile.component';
+import { ProfileAuthorizeGuard } from './modules/common/guard/profileAuthorizeGuard';
+import { LostPasswordComponent } from './modules/login/lost-password/lost-password.component';
 
 const routes: Routes = [
   {
@@ -38,13 +40,17 @@ const routes: Routes = [
       { path: 'categories/:slug', component: CategoryComponent },
       { path: 'cart', component: CartComponent },
       { path: 'order', component: OrderComponent },
-      { path: 'profile', component: ProfileComponent },
+      { path: 'profile', component: ProfileComponent, canActivate: [ProfileAuthorizeGuard] },
     ],
   },
   {
     path: '',
     component: FullpageComponent,
-    children: [{ path: 'login', component: LoginComponent }],
+    children: [
+      { path: 'login', component: LoginComponent },
+      { path: 'lostPassword', component: LostPasswordComponent },
+      { path: 'lostPassword/:hash', component: LostPasswordComponent }
+    ],
   },
   {
     path: '',
