@@ -42,7 +42,7 @@ import { AdminOrderStatsComponent } from 'src/app/modules/admin/admin-order/admi
     AdminOrderComponent,
     AdminOrderUpdateComponent,
     AdminOrderExportComponent,
-    AdminOrderStatsComponent
+    AdminOrderStatsComponent,
   ],
   imports: [
     CommonModule,

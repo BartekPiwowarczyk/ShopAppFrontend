@@ -11,7 +11,7 @@ export class AdminProductUpdateService {
   constructor(private http: HttpClient) {}
 
   getProduct(id: number): Observable<AdminProductUpdate> {
-    return this.http.get<AdminProductUpdate>('api/admin/products/' + id);
+    return this.http.get<AdminProductUpdate>('/api/admin/products/' + id);
   }
 
   saveProduct(id: number, value: AdminProductUpdate) {
