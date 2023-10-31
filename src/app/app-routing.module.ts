@@ -28,6 +28,7 @@ import { AdminAuthorizeGuard } from './modules/admin/common/guard/adminAuthorize
 import { ProfileComponent } from './modules/profile/profile.component';
 import { ProfileAuthorizeGuard } from './modules/common/guard/profileAuthorizeGuard';
 import { LostPasswordComponent } from './modules/login/lost-password/lost-password.component';
+import { OrderNotificationComponent } from './modules/order/order-notification/order-notification.component';
 
 const routes: Routes = [
   {
@@ -40,6 +41,7 @@ const routes: Routes = [
       { path: 'categories/:slug', component: CategoryComponent },
       { path: 'cart', component: CartComponent },
       { path: 'order', component: OrderComponent },
+      { path: 'order/notification/:orderHash', component: OrderNotificationComponent },
       { path: 'profile', component: ProfileComponent, canActivate: [ProfileAuthorizeGuard] },
     ],
   },
@@ -64,17 +66,17 @@ const routes: Routes = [
       { path: 'admin/categories/add', component: AdminCategoryAddComponent, canActivate: [AdminAuthorizeGuard] },
       { path: 'admin/categories/update/:id', component: AdminCategoryUpdateComponent, canActivate: [AdminAuthorizeGuard] },
       { path: 'admin/reviews', component: AdminReviewComponent, canActivate: [AdminAuthorizeGuard] },
-      {path: 'admin/orders', component: AdminOrderComponent, canActivate: [AdminAuthorizeGuard] },
-      {path: 'admin/orders/update/:id', component: AdminOrderUpdateComponent, canActivate: [AdminAuthorizeGuard] },
-      {path: 'admin/orders/export', component: AdminOrderExportComponent, canActivate: [AdminAuthorizeGuard] },
-      {path: 'admin/orders/stats', component: AdminOrderStatsComponent, canActivate: [AdminAuthorizeGuard] },
+      { path: 'admin/orders', component: AdminOrderComponent, canActivate: [AdminAuthorizeGuard] },
+      { path: 'admin/orders/update/:id', component: AdminOrderUpdateComponent, canActivate: [AdminAuthorizeGuard] },
+      { path: 'admin/orders/export', component: AdminOrderExportComponent, canActivate: [AdminAuthorizeGuard] },
+      { path: 'admin/orders/stats', component: AdminOrderStatsComponent, canActivate: [AdminAuthorizeGuard] },
     ]
   },
   {
     path: '',
     component: FullpageadminemptyComponent,
     children: [
-      {path: 'admin/login', component: AdminLoginComponent},
+      { path: 'admin/login', component: AdminLoginComponent},
     ]
   },
 ];
