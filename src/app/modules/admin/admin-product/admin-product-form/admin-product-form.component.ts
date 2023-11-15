@@ -7,43 +7,43 @@ import { FormCategoryService } from './form-category.service';
   selector: 'app-admin-product-form',
   template: ` <div [formGroup]="parentForm" fxLayout="column">
     <mat-form-field appearance="fill">
-      <mat-label>Nazwa</mat-label>
+      <mat-label>Name</mat-label>
       <input
         matInput
-        placeholder="Podaj nazwę produktu"
+        placeholder="Provide product name"
         formControlName="name"
       />
       <div
         *ngIf="name?.invalid && (name?.dirty || name?.touched)"
         class="errorMessages"
       >
-        <div *ngIf="name?.errors?.['required']">Nawa jest wymagana</div>
+        <div *ngIf="name?.errors?.['required']">Name is required</div>
         <div *ngIf="name?.errors?.['minlength']">
-          Nawa musi mieć przynajmniej 4 znaki
+          Name must have at least 4 characters.
         </div>
       </div>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
-      <mat-label>Przyjazny url</mat-label>
+      <mat-label>Url</mat-label>
       <input matInput placeholder="Podaj url" formControlName="slug" />
       <div
         *ngIf="slug?.invalid && (slug?.dirty || slug?.touched)"
         class="errorMessages"
       >
-        <div *ngIf="slug?.errors?.['required']">Nawa jest wymagana</div>
+        <div *ngIf="slug?.errors?.['required']">Url is required</div>
         <div *ngIf="slug?.errors?.['minlength']">
-          Nawa musi mieć przynajmniej 4 znaki
+          Url must have at least 4 characters.
         </div>
       </div>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
-      <mat-label>Opis</mat-label>
+      <mat-label>Description</mat-label>
       <textarea
         matInput
         rows="10"
-        placeholder="Podaj opis produktu"
+        placeholder="Provide product description"
         formControlName="description"
       ></textarea>
       <div
@@ -52,25 +52,25 @@ import { FormCategoryService } from './form-category.service';
         "
         class="errorMessages"
       >
-        <div *ngIf="description?.errors?.['required']">Opis jest wymagany</div>
+        <div *ngIf="description?.errors?.['required']">Description is required</div>
         <div *ngIf="description?.errors?.['minlength']">
-          Opis musi mieć przynajmniej 4 znaki
+          Description must have at least 4 characters.
         </div>
       </div>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
-      <mat-label>Pełny opis</mat-label>
+      <mat-label>Full description</mat-label>
       <textarea
         matInput
         rows="40"
-        placeholder="Podaj pełny opis produktu"
+        placeholder="Provide full description"
         formControlName="fullDescription"
       ></textarea>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
-      <mat-label>Kategoria</mat-label>
+      <mat-label>Category</mat-label>
       <mat-select formControlName="categoryId">
         <mat-option
           *ngFor="let element of categories"
@@ -86,60 +86,60 @@ import { FormCategoryService } from './form-category.service';
         class="errorMessages"
       >
         <div *ngIf="categoryId?.errors?.['required']">
-          Kategoria jest wymagana
+          Category is required.
         </div>
       </div>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
-      <mat-label>Cena</mat-label>
+      <mat-label>Price</mat-label>
       <input
         matInput
-        placeholder="Podaj cenę produktu"
+        placeholder="Provide product price"
         formControlName="price"
       />
       <div
         *ngIf="price?.invalid && (price?.dirty || price?.touched)"
         class="errorMessages"
       >
-        <div *ngIf="price?.errors?.['required']">Cena jest wymagana</div>
-        <div *ngIf="price?.errors?.['min']">Cena musi być większa od 0</div>
+        <div *ngIf="price?.errors?.['required']">Price is required</div>
+        <div *ngIf="price?.errors?.['min']">Price must be greater than 0.</div>
       </div>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
-      <mat-label>Cena promocyjna</mat-label>
+      <mat-label>Sale price</mat-label>
       <input
         matInput
-        placeholder="Podaj cenę promocyjną produktu"
+        placeholder="Provide product sale price"
         formControlName="salePrice"
       />
       <div
         *ngIf="salePrice?.invalid && (salePrice?.dirty || salePrice?.touched)"
         class="errorMessages"
       >
-        <div *ngIf="salePrice?.errors?.['min']">Cena musi być większa od 0</div>
+        <div *ngIf="salePrice?.errors?.['min']">Price must be greater than 0.</div>
       </div>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
-      <mat-label>Waluta</mat-label>
+      <mat-label>Currency</mat-label>
       <input
         matInput
-        placeholder="Podaj walutę produktu"
+        placeholder="Provide product currency"
         formControlName="currency"
       />
       <div
         *ngIf="currency?.invalid && (currency?.dirty || currency?.touched)"
         class="errorMessages"
       >
-        <div *ngIf="currency?.errors?.['required']">Waluta jest wymagana</div>
+        <div *ngIf="currency?.errors?.['required']">Currency is required</div>
       </div>
     </mat-form-field>
 
     <div fxLayoutAlign="end">
       <button mat-flat-button color="primary" [disabled]="!parentForm.valid">
-        Zapisz
+        Save
       </button>
     </div>
   </div>`,

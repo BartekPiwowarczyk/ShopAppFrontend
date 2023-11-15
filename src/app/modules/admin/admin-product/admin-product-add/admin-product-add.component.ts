@@ -35,7 +35,7 @@ export class AdminProductAddComponent implements OnInit {
       categoryId: ['', [Validators.required]],
       price: ['', [Validators.required, Validators.min(0)]],
       salePrice: ['', [Validators.min(0)]],
-      currency: ['PLN', Validators.required],
+      currency: ['EUR', Validators.required],
       slug: ['', [Validators.required, Validators.minLength(4)]],
     });
     this.imageForm = this.formBuilder.group({
@@ -61,7 +61,7 @@ export class AdminProductAddComponent implements OnInit {
           this.router
             .navigate(['/admin/products/update', product.id])
             .then(() =>
-              this.snackBar.open('Produkt został dodany', '', {
+              this.snackBar.open('Product has been added', '', {
                 duration: 3000,
               })
             );

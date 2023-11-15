@@ -45,7 +45,7 @@ export class LostPasswordComponent implements OnInit{
       .subscribe({
         next: result => {
           this.formGroup.reset();
-          this.snackBar.open('Email z linkiem został wysłany', '', {
+          this.snackBar.open('Password recovery email has been sent', '', {
             duration: 3000, panelClass: "snack-bar-bg-color-ok" });
           this.formError = "";
           },
@@ -64,7 +64,7 @@ export class LostPasswordComponent implements OnInit{
         next: () => {
           this.formChangePasswordError = ""
           this.formGroupChangePassword.reset();
-          this.snackBar.open('Hasło zostało zmienione', '', { duration: 3000, panelClass: "snack-bar-bg-color-ok" });
+          this.snackBar.open('Password has been changed', '', { duration: 3000, panelClass: "snack-bar-bg-color-ok" });
         },
         error: error => this.formChangePasswordError = error.error.message
       });
@@ -76,7 +76,7 @@ export class LostPasswordComponent implements OnInit{
         this.formChangePasswordError = "";
         return true;
       }
-      this.formChangePasswordError = "Hasła nie są identyczne";
+      this.formChangePasswordError = "Passwords do not match";
       return false;
     }
     

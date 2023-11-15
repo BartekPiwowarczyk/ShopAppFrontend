@@ -69,7 +69,7 @@ export class AdminProductUpdateComponent implements OnInit {
       .subscribe({
         next: (product) => {
           this.mapFormValues(product);
-          this.snackBar.open('Produkt został dodany', '', { duration: 3000 });
+          this.snackBar.open('Product has been update', '', { duration: 3000 });
         },
         error: (err) => this.adminMessageService.addSpringErrors(err.error),
       });

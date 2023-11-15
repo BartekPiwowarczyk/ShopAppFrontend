@@ -25,22 +25,8 @@ export class ProductDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.getProductDetails();
     this.reviewForm = this.formBuilder.group({
-      authorName: [
-        '',
-        [
-          Validators.required,
-          Validators.minLength(2),
-          Validators.maxLength(60),
-        ],
-      ],
-      content: [
-        '',
-        [
-          Validators.required,
-          Validators.minLength(4),
-          Validators.maxLength(600),
-        ],
-      ],
+      authorName: ['', [ Validators.required, Validators.minLength(2), Validators.maxLength(60)] ],
+      content: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(600)] ],
     });
   }
 
@@ -61,7 +47,7 @@ export class ProductDetailsComponent implements OnInit {
         } as Review)
         .subscribe((review) => {
           this.reviewForm.reset();
-          this.snackBar.open('Opinia została dodana', '', {
+          this.snackBar.open('Review has been added', '', {
             duration: 3000,
             panelClass: 'snack-bar-bg-color-ok',
           });

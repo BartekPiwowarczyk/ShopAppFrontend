@@ -1,21 +1,21 @@
 <div fxLayout="row">
     <div fxFlex>
-        <h2>Logowanie</h2>
+        <h2>Login</h2>
         <form [formGroup]="loginForm" fxLayout="column" (submit)="login()" class="loginForm">
-            <div *ngIf="loginError" class="error">Podaj poprawne dane logowania</div>
+            <div *ngIf="loginError" class="error">Provide correct login credentials</div>
             <mat-form-field appearance="fill">
                 <mat-label>Email</mat-label>
                 <input matInput formControlName="username" placeholder="Podaj swój email">
             </mat-form-field>
             <mat-form-field appearance="fill">
-                <mat-label>Hasło</mat-label>
+                <mat-label>Password</mat-label>
                 <input type="password" matInput formControlName="password">
             </mat-form-field>
-            <button mat-flat-button color="primary">Zaloguj</button>
+            <button mat-flat-button color="primary">Log in</button>
         </form>
     </div>
     <div fxFlex>
-        <h2>Rejestracja</h2>
+        <h2>Register</h2>
         <form [formGroup]="registerForm" fxLayout="column" (submit)="register()" class="registerForm">
             <div *ngIf="registerError" class="error">{{registerErrorMessage}}</div>
             <mat-form-field appearance="fill">
@@ -23,17 +23,17 @@
                 <input matInput formControlName="username" placeholder="Podaj swój email">
             </mat-form-field>
             <mat-form-field appearance="fill">
-                <mat-label>Hasło</mat-label>
+                <mat-label>Password</mat-label>
                 <input type="password" matInput formControlName="password">
             </mat-form-field>
             <mat-form-field appearance="fill">
-                <mat-label>Powtórz hasło</mat-label>
-                <input type="password" matInput formControlName="repeatPassword" placeholder="Powtórz hasło">
+                <mat-label>Confirm password</mat-label>
+                <input type="password" matInput formControlName="repeatPassword" placeholder="Confirm password">
             </mat-form-field>
-            <button mat-flat-button color="primary">Zarejestruj</button>
+            <button mat-flat-button color="primary">Sign up</button>
         </form>
         <div class="lostPassword">
-            <a routerLink="/lostPassword">Zapomniałeś hasła?</a>
+            <a routerLink="/lostPassword">Forgot your password?</a>
         </div>
     </div>
 </div>

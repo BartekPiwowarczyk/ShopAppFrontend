@@ -32,7 +32,7 @@ export class AdminCategoryComponent implements OnInit {
 
   confirmDelete(element: AdminCategoryNameDto) {
     this.dialogService
-      .openConfirmDialog('Czy na pewno chcesz usunąć tą kategorie?')
+      .openConfirmDialog('Are you sure you want to delete this category?')
       .afterClosed()
       .subscribe((result) => {
         if (result) {

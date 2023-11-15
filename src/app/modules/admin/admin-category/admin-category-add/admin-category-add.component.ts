@@ -37,7 +37,7 @@ export class AdminCategoryAddComponent implements OnInit {
           this.router
             .navigate(['/admin/categories'])
             .then(() =>
-              this.snackBar.open('Kategoria została dodana', '', {
+              this.snackBar.open('Category has been added', '', {
                 duration: 3000,
               })
             );

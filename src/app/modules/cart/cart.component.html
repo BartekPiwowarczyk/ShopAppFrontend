@@ -2,11 +2,11 @@
 <form *ngIf="summary?.items?.length" [formGroup]="formGroup"> 
 <div>
     <div fxLayout="row" fxLayoutAlign="space-between start" class="card-hrow">
-        <div class="cart-hcol-1">Obraz</div>
-        <div class="cart-hcol-2">Nazwa</div>
-        <div class="cart-hcol-3">Ilość</div>
-        <div class="cart-hcol-4">Wartość</div>
-        <div class="cart-hcol-5">Usuń</div>
+        <div class="cart-hcol-1">Image</div>
+        <div class="cart-hcol-2">Name</div>
+        <div class="cart-hcol-3">Quantity</div>
+        <div class="cart-hcol-4">Value</div>
+        <div class="cart-hcol-5">Delete</div>
     </div>
     <div formGroupName="items">
         <div *ngFor="let item of items; let i=index">
@@ -28,21 +28,21 @@
     </div>
     <div>
         <div class="card-row" fxLayoutAlign="end start">
-            <button mat-flat-button color="warn"  (click)="submit()">Zaktualizuj koszyk</button>
+            <button mat-flat-button color="warn"  (click)="submit()">Update cart</button>
         </div>
     </div>
     <div fxLayoutAlign="end start">
-        <div class="summary"> Wartość: </div>
+        <div class="summary"> Value: </div>
         <div class="summary"> <b>{{summary?.summary?.grossValue}}</b></div>
     </div>
 </div>
 <div>
-    <button mat-flat-button color="warn" (click)="back()">Powrót</button>
+    <button mat-flat-button color="warn" (click)="back()">Back</button>
 </div>
 <div fxLayoutAlign="end start">
-    <button type="button" class="orderButton" mat-flat-button color="accent" routerLink="/order">Zamawiam</button>
+    <button type="button" class="orderButton" mat-flat-button color="accent" routerLink="/order">Order</button>
 </div>
 </form>
 <div *ngIf="!summary?.items?.length">
-    Koszyk jest pusty
+    Cart is empty
 </div>

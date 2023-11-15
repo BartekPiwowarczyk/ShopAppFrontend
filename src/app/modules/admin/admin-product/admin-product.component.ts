@@ -49,7 +49,7 @@ export class AdminProductComponent implements AfterViewInit {
 
   confirmDelete(element: AdminProduct) {
     this.dialogService
-      .openConfirmDialog('Czy na pewno chcesz usunąć ten produkt?')
+      .openConfirmDialog('Are you sure you want to delete this product?')
       .afterClosed()
       .subscribe((result) => {
         if (result) {

@@ -1,10 +1,10 @@
-<h1>Edycja zamówienia </h1>
+<h1>Order updating </h1>
 <div>
-    <h2>Dane zamówienia</h2>
-    Numer zamówienia: {{order?.id}}
+    <h2>Order details</h2>
+    Order number: {{order?.id}}
     <br /><br />
-    Data złożenia: {{order?.placeDate | date : 'yyyy-MM-dd HH:mm'}}<br />
-    Płatność: {{order?.payment?.name}}<br /><br />
+    Date: {{order?.placeDate | date : 'yyyy-MM-dd HH:mm'}}<br />
+    Payment: {{order?.payment?.name}}<br /><br />
     
     <form [formGroup]="formGroup" fxLayout="row"  fxLayoutAlign="space-between start" (submit)="changeStatus()">
         <mat-form-field>
@@ -13,17 +13,17 @@
                 <mat-option *ngFor="let status of statuses | keyvalue" [value]="status.key">{{status.value}}</mat-option>
             </mat-select>
         </mat-form-field>
-        <button mat-flat-button color="primary">Zapisz</button>
+        <button mat-flat-button color="primary">Save</button>
     </form>
 </div>
 <div>
-    <h2>Pozycje</h2>
+    <h2>Items</h2>
     <div fxLayaout="row" fxLayoutAlign="space-between start">
         <div class="order-hcol-1">
-            Nazwa
+            Name
         </div>
-        <div class="order-hcol-2">Ilość</div>
-        <div class="order-hcol-3">Wartość</div>
+        <div class="order-hcol-2">Quantity</div>
+        <div class="order-hcol-3">Value</div>
     </div>
     <div *ngFor="let row of order?.orderRows" fxLayaout="row" fxLayoutAlign="space-between start">
         <div class="order-col-1">
@@ -34,21 +34,21 @@
         <div>{{row.quantity * row.price}}</div>
     </div>
     <div fxLayoutAlign="end end">
-        <b>Wartość: {{order?.grossValue}}</b>
+        <b>Value: {{order?.grossValue}}</b>
     </div>
 </div>
 <div>
-    <h2>Dane klienta</h2>
-    <div>Imię: {{order?.firstname}}</div>
-    <div>Nazwisko: {{order?.lastname}}</div>
-    <div>Ulica: {{order?.street}}</div>
-    <div>Kod: {{order?.zipcode}}</div>
-    <div>Miasto: {{order?.city}}</div>
+    <h2>Customer information</h2>
+    <div>Firstname: {{order?.firstname}}</div>
+    <div>Surname: {{order?.lastname}}</div>
+    <div>Street: {{order?.street}}</div>
+    <div>Zip code: {{order?.zipcode}}</div>
+    <div>City: {{order?.city}}</div>
     <div>Email: {{order?.email}}</div>
-    <div>Tel: {{order?.phone}}</div>
+    <div>Phone: {{order?.phone}}</div>
 </div>
 <div>
-    <h2>Log zdarzeń</h2>
+    <h2>Event log</h2>
     <div>
         <div *ngFor="let log of order?.orderLogs" class="orderLog">
             <div>{{log?.created | date: 'yyyy-MM-dd HH:mm'}}</div>

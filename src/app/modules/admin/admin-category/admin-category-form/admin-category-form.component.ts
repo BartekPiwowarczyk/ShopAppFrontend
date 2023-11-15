@@ -6,49 +6,49 @@ import { FormGroup } from '@angular/forms';
   selector: 'app-admin-category-form',
   template: ` <div [formGroup]="parentForm" fxLayout="column">
     <mat-form-field appearance="fill">
-      <mat-label>Nazwa</mat-label>
+      <mat-label>Name</mat-label>
       <input
         matInput
-        placeholder="Podaj nazwę produktu"
+        placeholder="Provide the product name"
         formControlName="name"
       />
       <div
         *ngIf="name?.invalid && (name?.dirty || name?.touched)"
         class="errorMessages"
       >
-        <div *ngIf="name?.errors?.['required']">Nawa jest wymagana</div>
+        <div *ngIf="name?.errors?.['required']">Name is required.</div>
         <div *ngIf="name?.errors?.['minlength']">
-          Nawa musi mieć przynajmniej 4 znaki
+            Name must have at least 4 characters
         </div>
       </div>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
-      <mat-label>Przyjazny url</mat-label>
-      <input matInput placeholder="Podaj url" formControlName="slug" />
+      <mat-label>Url</mat-label>
+      <input matInput placeholder="Provide url" formControlName="slug" />
       <div
         *ngIf="slug?.invalid && (slug?.dirty || slug?.touched)"
         class="errorMessages">
-        <div *ngIf="slug?.errors?.['required']">Nawa jest wymagana</div>
+        <div *ngIf="slug?.errors?.['required']">url is required.</div>
         <div *ngIf="slug?.errors?.['minlength']">
-          Nawa musi mieć przynajmniej 4 znaki
+          Url must have at least 4 characters
         </div>
       </div>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
-      <mat-label>Opis</mat-label>
+      <mat-label>Description</mat-label>
       <textarea
         matInput
         rows="5"
-        placeholder="Podaj opis produktu"
+        placeholder="Provide product description"
         formControlName="description"
       ></textarea>
     </mat-form-field>
 
     <div fxLayoutAlign="end">
       <button mat-flat-button color="primary" [disabled]="!parentForm.valid">
-        Zapisz
+        Save
       </button>
     </div>
   </div>`,

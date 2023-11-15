@@ -46,7 +46,7 @@ export class AdminCategoryUpdateComponent implements OnInit {
       .subscribe({
         next: (category) => {
           this.mapToFormValues(category);
-          this.snackBar.open('Kategoria została zapisana', '', {
+          this.snackBar.open('Category has been updated', '', {
             duration: 3000,
           });
         },

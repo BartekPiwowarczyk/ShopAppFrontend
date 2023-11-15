@@ -19,7 +19,7 @@ export class AdminOrderStatsComponent implements AfterViewInit{
     labels: [],
     datasets: [
       {
-        label: 'Zamówienia',
+        label: 'Orders',
         data: [],
         borderColor: '#FF3F7C',
         backgroundColor: '#FF7A9F',
@@ -27,7 +27,7 @@ export class AdminOrderStatsComponent implements AfterViewInit{
         yAxisID: 'y'
       },
       {
-        label: 'Sprzedaż',
+        label: 'Sales',
         data: [],
         borderColor: '#0088FF',
         backgroundColor: '#00A1FF ',
@@ -59,7 +59,7 @@ export class AdminOrderStatsComponent implements AfterViewInit{
           },
           title: {
             display: true,
-            text: 'Wykres sprzedaży'
+            text: 'Sales chart'
           }
         },
         scales: {

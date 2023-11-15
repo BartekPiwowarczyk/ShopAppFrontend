@@ -1,4 +1,4 @@
-<h1>Promowane produkty</h1>
+<h1>Sales products</h1>
 
 <mat-card *ngFor="let product of homePageData?.saleProducts">
     <div flexLayout="row">
@@ -19,7 +19,7 @@
       </div>    
     </div>
     <mat-card-actions align="end" fxLayoutGap="10">
-      <button mat-flat-button color="warn" routerLink="{{'/products/' + product.slug}}">Pokaż</button>
-      <button mat-flat-button color="primary" routerLink="/cart" [queryParams]="{productId: product?.id}">Do koszyka</button>
+      <button mat-flat-button color="warn" routerLink="{{'/products/' + product.slug}}">Show</button>
+      <button mat-flat-button color="primary" routerLink="/cart" [queryParams]="{productId: product?.id}">Add to cart</button>
     </mat-card-actions>
   </mat-card>

@@ -24,7 +24,7 @@ export class OrderComponent implements OnInit{
   isLoggedIn = false;
 
   private statuses = new Map<string,string>([
-    ["NEW","Nowe"]
+    ["NEW","New"]
   ])
 
   constructor(

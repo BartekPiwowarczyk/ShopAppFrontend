@@ -30,7 +30,7 @@ export class AdminMessageService {
     if (error.errors?.length > 0) {
       for (let message of error.errors) {
         this.messages.push(
-          'Pole: ' + message.field + ' posiada błąd: ' + message.defaultMessage
+          'Field: ' + message.field + ' contains an error: ' + message.defaultMessage
         );
       }
     } else {

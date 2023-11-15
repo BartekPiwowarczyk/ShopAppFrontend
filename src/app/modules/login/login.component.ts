@@ -69,7 +69,7 @@ constructor(
           if(err.error.message) {
             this.registerErrorMessage = err.error.message;
           } else {
-            this.registerErrorMessage= "Coś poszło źle, spróbuj ponownie później";
+            this.registerErrorMessage= "Something went wrong, please try again later";
           }
         }
       });
@@ -82,7 +82,7 @@ constructor(
       return true;
     }
     this.registerError = true;
-    this.registerErrorMessage = "Hasła nie są identyczne";
+    this.registerErrorMessage = "Passwords do not match";
     return false;
   }
 }
