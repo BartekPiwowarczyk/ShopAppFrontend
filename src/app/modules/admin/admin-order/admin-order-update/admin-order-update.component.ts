@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { AdminOrderService } from '../admin-order.service';
 import { AdminOrder } from '../model/adminOrder';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-admin-order-update',
@@ -18,7 +19,8 @@ export class AdminOrderUpdateComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private adminOrderService: AdminOrderService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private snackBar: MatSnackBar
     ) { }
 
   ngOnInit(): void {
@@ -43,7 +45,8 @@ export class AdminOrderUpdateComponent implements OnInit {
   
   changeStatus() {
     this.adminOrderService.saveStatus(this.order.id, this.formGroup.value)
-    .subscribe();
+    .subscribe()
+    this.snackBar.open('Status has been changed', '', {duration: 3000 })
   }
 
   getInitData() {
