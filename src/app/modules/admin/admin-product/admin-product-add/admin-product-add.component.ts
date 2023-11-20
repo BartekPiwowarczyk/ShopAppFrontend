@@ -35,7 +35,7 @@ export class AdminProductAddComponent implements OnInit {
       categoryId: ['', [Validators.required]],
       price: ['', [Validators.required, Validators.min(0)]],
       salePrice: ['', [Validators.min(0)]],
-      currency: ['EUR', Validators.required],
+      currency: ['', Validators.required],
       slug: ['', [Validators.required, Validators.minLength(4)]],
     });
     this.imageForm = this.formBuilder.group({
