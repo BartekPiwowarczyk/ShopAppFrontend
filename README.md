@@ -28,8 +28,8 @@ User functions include:
 ## Technologies:
 <a href="https://angular.io/" target="_blank" rel="noreferrer"><img src="https://angular.io/assets/images/logos/angular/logo-nav@2x.png" alt="angular" width="80" height="50"/></a> 
 <img src="https://banner2.cleanpng.com/20180730/ghy/kisspng-logo-cascading-style-sheets-html5-css3-prags-h-python-stickers-5b5ed2621e52c3.0848753715329408981242.jpg" alt="html and css" width="90" height="50"/> 
-<a href="https://nodejs.org/en" target="_blank" rel="noreferrer"> <img src="https://www.h2database.com/html/images/h2-logo-2.png" alt="nodejs" width="70" height="40"/> </a>
-<a href="https://www.npmjs.com/" target="_blank" rel="noreferrer"> <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--5NzZEMLS--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://thepracticaldev.s3.amazonaws.com/i/7pryn9ls88giuc9m8cau.png" alt="liquibase" width="80" height="50"/> </a>
+<a href="https://nodejs.org/en" target="_blank" rel="noreferrer"> <img src="https://nodejs.org/static/images/logo.svg" alt="nodejs" width="70" height="40"/> </a>
+<a href="https://www.npmjs.com/" target="_blank" rel="noreferrer"> <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--5NzZEMLS--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://thepracticaldev.s3.amazonaws.com/i/7pryn9ls88giuc9m8cau.png" alt="npm" width="80" height="50"/> </a>
 
 ---
 ## Run application:
